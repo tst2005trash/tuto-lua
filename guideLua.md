@@ -1,15 +1,22 @@
-#Titre
-##Introduction
-###Pourquoi choisir Lua
+# Titre
+
+## Introduction
+
+### Pourquoi choisir Lua
+
 Lua est un language simple et rapide pour un language de script mais assez complet pour faire des programmes simples et est aussi très utilisé pour des "plug-ins".
 En plus il fonctionne sur presque n'importe quelle plate-forme sur PC (comme windows, mac os, linux ou \*BSD), sur téléphone (comme iOS ou android) et même sur des consoles comme les nintendo ds ou les ps2.
 ###Installation
 Dans ce tutoriel j'utiliserai Lua 5.3 (Lua 5.3.4 précisément mais n'importe quelle version 5.3 devrait marcher avec quelques différences mineures) et certaines choses peuvent ne pas fonctionner dans des versions plus anciennes ou plus récentes (si vous lisez ce tutoriel après la sortie de Lua 5.4 (dans ce cas il manquera les nouveautés)).
 [Lien de tous les binaires de Lua (pas besoin de compiler)](http://www.lua-users.org/wiki/LuaBinaries).
 Si vous voulez ne rien télécharger, vous pouvez aussi essayer [la démo en ligne de Lua](https://www.lua.org/demo.html).
-####Windows
+
+#### Windows
+
 Pour windows vous pouvez trouver des binaires (c'est plutôt compliqué de compiler sur windows) [ici](http://www.luabinaries.sourceforge.net) ou [là](https://sourceforge.net/projects/luabinaries/files/5.3.3/Tools%20Executables/lua-5.3.3_Win32_bin.zip/download) pour le lien de téléchargement direct de Lua 5.3.3 (32 bits).
-####Mac Os
+
+#### Mac Os
+
 [Le lien que j'ai donné pour windows](http://www.luabinaries.sourceforge.net) contient aussi des binaires pour mac os mais vous pouvez aussi le compiler pour avoir la dernière version en suivant les instructions [sur le site de Lua](https://www.lua.org/download.html).
 Je laisse [le lien direct de téléchargement d'un binaire Lua 5.3.2 pour mac os (la version la plus récente disponible actuellement en binaire)](https://sourceforge.net/projects/luabinaries/files/5.3.2/Tools%20Executables/lua-5.3.2_MacOS1011_bin.tar.gz/download)
 ####Linux
@@ -17,12 +24,16 @@ La plupart des distributions auront un paquet Lua dans leur gestionnaire de paqu
 Vous pouvez aussi le compiler comme pour mac os (il y a plus de chances que ça marche d'ailleurs) avec les instructions du [site de Lua](https://www.lua.org/download.html).
 Sinon [le lien que j'ai donné pour windows](http://luabinaries.sourceforge.net) marche toujours.
 Je ne peux pas donner de lien direct de Lua pour linux parce qu'il y a des versions différentes pour différents kernels mais je laisse au moins le [lien du dossier pour Lua 5.3.3](https://sourceforge.net/projects/luabinaries/files/5.3.3/Tools%20Executables/).
-###Utiliser Lua
+
+### Utiliser Lua
+
 Une fois que vous avez installé Lua vous pouvez lancer l'interpreteur (il lancera ce que vous tapez automatiquement) en lancant "lua" (ou "lua.exe" pour windows) dans un terminal (il lance parfois automatiquement le terminal (mac os))
 Pour ouvrir un terminal sur windows, ouvrez l'explorateur windows dans le dossier qui contient Lua et cliquez droit en enfoncant shift.
 Sur linux la plupart des explorateurs de fichiers ont aussi cette fonctionnalité mais si vous avez installé Lua avec un gestionnaire de paquets (ou avec make install après avoir compilé) il suffit d'en ouvrir un n'importe où.
 Après avoir ouvert le terminal au bon endroit vous pouvez taper `lua` pour lancer l'interpreteur ou `lua fichier.lua` pour lancer un fichier (dans ce cas un fichier qui s'appelle "fichier.lua").
-####Un éditeur de texte
+
+#### Un éditeur de texte
+
 Pour programmer en Lua dans un fichier, c'est parfois plus simple d'utiliser un éditeur de texte qui colore certaines parties du texte (c'est plus lisible).
 Pour windows je recommande [notepad++](https://notepad-plus-plus.org/fr/).
 Pour mac os il y a [TextMate](https://macromates.com/) ou [Fraise](https://github.com/jfmoy/Fraise/downloads).
@@ -32,7 +43,9 @@ Si vous voulez utiliser le même éditeur sur chaque plate-forme sans installer 
 Vous pouvez aussi regarder [la liste des éditeurs pour Lua](http://lua-users.org/wiki/LuaEditorSupport).
 
 **NOTE:** Les éditeurs que j'ai cité pour linux peuvent aussi fonctionner sur d'autres plate-formes, ils sont juste plus souvent utilisés pour linux.
-##Le premier programme
+
+## Le premier programme
+
 On va commencer par tradition par le "Hello World!", c'est à dire un programme qui affiche "Hello World!", il y a deux moyens de le faire.
 
     print("Hello World!")
@@ -67,7 +80,9 @@ Dans un code en Lua qui contient plusieurs "_instructions_", chaque instruction 
 Même si la dernière façon est considérée "sale" par certaines personnes.
 
 L'espace entre les deux `print` des deux derniers exemples n'est pas necessaire parce qu'ils se terminent tout les deux par un caractère spécial (ici ")" et ";").
-###Les commentaires
+
+### Les commentaires
+
 Les commentaires sont des morceaux de textes qui ne sont pas executés, en Lua les commentaires commencent par `--` (deux tirets).
 Ils sont souvent utilisés pour expliquer un bout de code sans avoir à le relire (surtout si il est compliqué).
 Par exemple
@@ -93,7 +108,9 @@ Par exemple
     --]]
 
 Dans ce code les parties `---[[` et `--]]` ne font pas planter parce qu'elles sont commentées par les deux tirets.
-##Les variables
+
+## Les variables
+
 Dans cette partie on va parler des variables "_globales_" (il y a aussi des variables locales mais on les verra après).
 
 Une variable permet de stocker une valeur (qui peut être de plusieurs types, on verra ça juste après).
@@ -125,20 +142,22 @@ On peut aussi utiliser cette syntaxe pour inverser deux ou plusieurs variables.
 Une variable globale n'a pas besoin d'être "_déclarée_" à l'avance, c'est à dire qu'on peut l'utiliser sans avoir besoin de préciser qu'on veut utiliser le nom (contrairement à la plupart des languages compilés) et on peut redéfinir le type d'une variable en lui "_assignant_" une valeur d'un autre type.
 
 L'interpréteur lua (en tout cas en version 5.3 normalement) affiche les valeurs des variables quand vous entrez leurs noms, ça évite de taper print à chaque fois.
-###Les types de variable
+
+### Les types de variable
+
 Il y a huit types de variables en Lua: les "_nils_", les booléens, les nombres, les "_strings_" (le texte), les "_userdata_", les fonctions, les "_thread_" (tâches), et les "_tables_".
 
 On peut récuperer le type d'une variable avec la fonction `type` avec comme argument la variable, elle "_retourne_" le type en tant que texte.
 
     print(type("Hello World!")) --> string
 
-####Les _nils_
+#### Les _nils_
 Un _nil_ en Lua ne peut avoir qu'une seule valeur (`nil`) et est utilisé quand une variable n'existe pas, par exemple
 
     print(nomDeVariableQuiNExistePas) --> nil
 
 Ça permet de supprimer une variable, pour que sa valeur soit "_collectée_" (c'est à dire liberer la mémoire qu'elle utilise pour la laisser au système ou aux autres programmes), tout simplement en lui donnant la valeur `nil`.
-####Les nombres
+#### Les nombres
 Les nombres sont un des type de variable les plus simple, en Lua il n'y a qu'un seul type de nombre (en fait 2 depuis la version 5.3 mais d'après [le manuel](https://www.lua.org/manual/5.3/manual.html#2.1) le programmeur peut ignorer leur différences).
 Pour utiliser un nombre il suffit d'écrire le nombre en chiffres en remplacant la virgule (si il y en a une) par un point.
 
@@ -149,7 +168,7 @@ Pour utiliser un nombre il suffit d'écrire le nombre en chiffres en remplacant 
     n3 = -85.1
     print(n3) --> -85.1
 
-#####Les opérateurs
+##### Les opérateurs
 Avoir des nombres serait inutile si on ne pouvait pas faire d'opérations dessus.
 
 Les opérateurs basiques en Lua sont: `+` (addition), `-` (soustraction), `*` (multiplication), `/` (division), `%` ([modulo](https://fr.wikipedia.org/wiki/Modulo_(op%C3%A9ration\))) et `^` (puissance), il y a aussi `//` pour la division de nombre entiers (8/5=1.6 mais 8//5=1) mais c'est plus rare de l'utiliser.
@@ -175,13 +194,15 @@ Le `-` peut être utilisé en tant qu'opérateur unaire (c'est à dire sur un se
     n=-5
     print(-n) --> 5
 
-#####La fonction tonumber
+##### La fonction tonumber
+
 La fonction `tonumber` permet de convertir explicitement un autre type (notamment du texte) en nombre (elle retourne l'argument si c'est déja un nombre), je dis explicitement parce que du texte peut être utilisé comme nombre sans `tonumber`.
 
     print(tonumber("58")+8) --> 66
     print("58"+8) --> 66
 
-#####La "_bibliothèque_" math
+##### La "_bibliothèque_" math
+
 Ce qu'on appelle une bibliothèque c'est tout simplement un ensemble de fonctions et de constantes qui sont en Lua, rangés dans des _tables_ (qu'on verra plus tard) ce qui permet de les utiliser de cette façon : `nomDeLaBibliotheque.nomDeLaFonction(arguments)`, comme pour `io.write`.
 
 `math.floor`, `math.ceil` et `math.modf` permettent d'arrondir des nombres.
@@ -242,7 +263,9 @@ Une technique pour avoir une _seed_ différente à chaque fois est d'utiliser le
     math.randomseed(os.time())
 
 **NOTE:** Ce n'est pas nécessaire d'utiliser `print` pour appeller des fonctions mais je l'ajoute pour afficher leurs résultats pour ceux qui n'utiliserait pas l'interpreteur.
-####Le texte
+
+#### Le texte
+
 Pour utiliser du texte il suffit de l'écrire entre guillemets (`"`) en peut aussi utiliser le caractère `'` ou alors, si le texte fait plusieurs lignes on peut utiliser les "_long strings_", c'est à dire commencer le texte par `[[̀` et le terminer par `]]` (un peu comme pour les commentaires multilignes).
 
     print("texte1") --> texte1
@@ -271,7 +294,9 @@ On peut aussi utilser du texte multiligne de différents niveaux (`[[` et `]]` �
 
 Il n'y a aucune différence entre les différents niveaux à part le fait qu'un niveau ne peut se fermer qu'avec le même niveau (niveau 4 avec niveau 4 seulement par exemple), c'est donc utile pour avoir du texte long qui contient du texte long.
 En général on décide du caractère (entre `"` et `'`) par rapport au texte (si il y a des guillemets on peut utiliser `'` par exemple).
-#####L'échappement
+
+##### L'échappement
+
 Si on veut utiliser certains caractères qu'on ne peut pas utiliser normalement, on peut utiliser des "_escapes_" qui commencent par un anti-slash (\\).
 
 * \a [caractère d'appel](https://fr.wikipedia.org/wiki/Caract%C3%A8re_d%27appel)
@@ -295,7 +320,8 @@ Si on veut utiliser certains caractères qu'on ne peut pas utiliser normalement,
     te]]
     --]]
 
-#####Les opérateurs sur le texte
+##### Les opérateurs sur le texte
+
 En lua il y a deux opérateurs pour le texte: `..` pour la concaténation (mettre du texte à la suite d'un autre) et l'opérateur unaire `#` pour connaitre la longueur du texte (pour le texte avec des caractères non anglais il y a une fonction expliquée à la fin du chapitre "La "bibliothèque" string").
 
     print("1".."2") --> 12
@@ -304,7 +330,8 @@ En lua il y a deux opérateurs pour le texte: `..` pour la concaténation (mettr
     t = "texte2"
     print(#t) --> 6
 
-#####La fonction tostring
+##### La fonction tostring
+
 La fonction `tostring` permet de convertir d'autre types de variables en texte (print utilise tostring sur chaque argument).
 Un nombre peut être utilisé en tant que texte.
 
@@ -313,7 +340,8 @@ Un nombre peut être utilisé en tant que texte.
     print(tostring(nil)) --> nil
     print(nil) --> nil
 
-#####La bibliothèque string
+##### La bibliothèque string
+
 Comme pour les nombres, il y a une bibliothèque pour modifier le texte appelée "string".
 
 `string.rep` permet de répeter un texte un certain nombre de fois, par exemple
