@@ -6,7 +6,9 @@
 
 Lua est un language simple et rapide pour un language de script mais assez complet pour faire des programmes simples et est aussi très utilisé pour des "plug-ins".
 En plus il fonctionne sur presque n'importe quelle plate-forme sur PC (comme windows, mac os, linux ou \*BSD), sur téléphone (comme iOS ou android) et même sur des consoles comme les nintendo ds ou les ps2.
+
 ###Installation
+
 Dans ce tutoriel j'utiliserai Lua 5.3 (Lua 5.3.4 précisément mais n'importe quelle version 5.3 devrait marcher avec quelques différences mineures) et certaines choses peuvent ne pas fonctionner dans des versions plus anciennes ou plus récentes (si vous lisez ce tutoriel après la sortie de Lua 5.4 (dans ce cas il manquera les nouveautés)).
 [Lien de tous les binaires de Lua (pas besoin de compiler)](http://www.lua-users.org/wiki/LuaBinaries).
 Si vous voulez ne rien télécharger, vous pouvez aussi essayer [la démo en ligne de Lua](https://www.lua.org/demo.html).
@@ -19,7 +21,9 @@ Pour windows vous pouvez trouver des binaires (c'est plutôt compliqué de compi
 
 [Le lien que j'ai donné pour windows](http://www.luabinaries.sourceforge.net) contient aussi des binaires pour mac os mais vous pouvez aussi le compiler pour avoir la dernière version en suivant les instructions [sur le site de Lua](https://www.lua.org/download.html).
 Je laisse [le lien direct de téléchargement d'un binaire Lua 5.3.2 pour mac os (la version la plus récente disponible actuellement en binaire)](https://sourceforge.net/projects/luabinaries/files/5.3.2/Tools%20Executables/lua-5.3.2_MacOS1011_bin.tar.gz/download)
+
 ####Linux
+
 La plupart des distributions auront un paquet Lua dans leur gestionnaire de paquet (même des anciennes versions, par exemple j'ai "_lua52_" pour la dernière version de Lua 5.2 (5.2.4)).
 Vous pouvez aussi le compiler comme pour mac os (il y a plus de chances que ça marche d'ailleurs) avec les instructions du [site de Lua](https://www.lua.org/download.html).
 Sinon [le lien que j'ai donné pour windows](http://luabinaries.sourceforge.net) marche toujours.
